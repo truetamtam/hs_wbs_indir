@@ -16,7 +16,12 @@ update-locale
 
 # opcache
 #
-sed -i 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=0/' /etc/php5/fpm/php.ini
+sed -i 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=0/' /etc/php5/apache2/php.ini
+
+# localhost error fix
+#
+echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
+a2enconf fqdn
 
 # stopping nginx
 # installing apache2
