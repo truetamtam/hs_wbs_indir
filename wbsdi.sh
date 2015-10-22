@@ -2,18 +2,19 @@
 # Installer script for use with homestead and webasyst framework.
 # All keys for interacting with github and bitbucket must be set.
 # Installs also webasyst shop-script 6.
-echo "Hostname is a must."
 
 
-while getopts "h:d:" optname
+while getopts "h:d:b:" optname
   do
     case "$optname" in
       "h")
         WBSHOST=$OPTARG
-        WBSHOSTDB=${WBSHOST%.*}
       ;;
       "d")
-        WBSHOST="$WBSHOST/$OPTARG"
+        WBSHOST="$WBSHOST/$OPTARG" # unused here
+      ;;
+      "b")
+        WBSHOSTDB=$OPTARG
       ;;
       "?")
         echo "Unknown option $OPTARG"
@@ -28,7 +29,6 @@ while getopts "h:d:" optname
     esac
   done
 
-exit
 
 # cloning webasyst framework
 echo "Cloning webasyst framework...";
