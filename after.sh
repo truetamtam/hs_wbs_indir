@@ -25,7 +25,7 @@ service nginx stop
 apt-get update
 apt-get install -y apache2 php5 libapache2-mod-php5
 # enabling rewrite module
-#a2enmod rewrite
+a2enmod rewrite
 
 # apache2 config
 #
