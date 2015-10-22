@@ -11,7 +11,7 @@ alias dc='docker-compose'
 alias d='docker'                                                              
 alias dm='docker-machine'                                                     
 alias l='ls -Al'                                                              
-alias tobistro='cd /home/vagrant/www/wbsdir.dev/wa-apps/shop/plugins/bistrozakaz'
+alias tobistro='cd /var/www/wbsdir.dev/indir/wa-apps/shop/plugins/bistrozakaz'
                                                                               
 function serve() {                                                            
     if [[ "$1" && "$2" ]]                                                     
