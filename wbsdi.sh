@@ -46,6 +46,7 @@ cp ${WBSHOST}/wa-config/db.php.example ${WBSHOST}/wa-config/db.php
 sed -i 's/\x27user\x27 => \x27root\x27/\x27user\x27 => \x27homestead\x27/' ${WBSHOST}/wa-config/db.php
 sed -i 's/\x27password\x27 => \x27\x27/\x27password\x27 => \x27secret\x27/' ${WBSHOST}/wa-config/db.php
 sed -i 's/\x27database\x27 =>  \x27wa\x27/\x27database\x27 => \x27'"$WBSHOSTDB"'\x27/' ${WBSHOST}/wa-config/db.php
+awk '/return array\(/ { print; print "    \x27sql_mode\x27 => \x27TRADITIONAL,\x27; next }1' ${WBSHOST}/wa-config/db.php > ${WBSHOST}/wa-config/db.php
 # locale
 cp ${WBSHOST}/wa-config/locale.php.example ${WBSHOST}/wa-config/locale.php
 # system config
