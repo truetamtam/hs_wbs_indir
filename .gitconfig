@@ -1,0 +1,29 @@
+[user]
+	name = truetamtam
+	email = truetamtam@yandex.ru
+[github]
+	token = token
+[core]
+	autocrlf = input
+	editor = vim
+	safecrlf = false
+	excludesfile = excluded
+[alias]
+	st = status
+	ch = checkout
+	cm = commit
+	s = status -s
+	st = status
+	lg = log --pretty --all --graph --decorate --oneline
+	hist = log --pretty --graph --decorate --date=short --oneline
+	br = branch
+	type = cat-file -t
+	dump = cat-file -p
+[gui]
+	recentrepo = recent
+[push]
+	default = simple
+[color]
+	ui = true
+[pull]
+	rebase = false
