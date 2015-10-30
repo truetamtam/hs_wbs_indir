@@ -14,10 +14,6 @@ echo "syntax on\nset nu\n" > /home/vagrant/.vimrc
 locale-gen ru_RU.UTF-8                                                                
 update-locale                                                                         
 
-# localhost error fix
-#
-echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
-a2enconf fqdn
 
 # stopping nginx
 # installing apache2
@@ -31,6 +27,11 @@ a2enmod rewrite
 # opcache
 #
 sed -i 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=0/' /etc/php5/apache2/php.ini
+
+# apache2 localhost error fix
+#
+echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
+a2enconf fqdn
 
 # apache2 config
 #
