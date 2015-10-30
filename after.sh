@@ -37,5 +37,7 @@ a2enmod rewrite
 sed -i '166s/None/All/' /etc/apache2/apache2.conf
 sed -i 's,/var/www/html,/var/www/wbsdir.dev,' /etc/apache2/sites-available/000-default.conf
 sed -i 's,#ServerName www.example.com,ServerName wbsdir.dev,' /etc/apache2/sites-available/000-default.conf
+# running from vagrant user. Crusial for mac.
+sed -i 's/www-data/vagrant/' /etc/apache2/envvars
 
 service apache2 restart
